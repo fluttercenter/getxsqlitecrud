@@ -31,9 +31,9 @@ class EmployeeRepository {
           await dio.get('https://api.ms4.io/employee?_page=1');
       print(response.data);
       if (response.statusCode == 200) {
-        response.data.map<Employee>((c) {
-          // var employee = Employee.fromJson(c);
-          // save(employee);
+        response.data.forEach((c) {
+          var employee = Employee.fromMap(c);
+          save(employee);
         });
       }
     } catch (err) {

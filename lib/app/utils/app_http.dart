@@ -31,5 +31,6 @@ class AppHttp {
     // print('>>>>>>>> http response ');
     print(response.data);
     print('>>>>>>>> http response ok ');
+    return handler.next(response);
   }
 }

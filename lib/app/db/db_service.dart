@@ -44,7 +44,7 @@ class DBService extends GetxService {
     String path = join(databasesPath, 'spacex9002.db');
     // descomente o await abaixo para excluir a base de dados do caminho
     // recuperado pelo path na inicializacao
-    await deleteDatabase(path);
+    // await deleteDatabase(path);
     // Retorna o banco de dados aberto
     return db = await openDatabase(
       join(databasesPath, 'spacex9002.db'),
