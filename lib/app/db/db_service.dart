@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:getxtutorial6sqlitetodo/app/data/model/employee_model.dart';
-import 'package:getxtutorial6sqlitetodo/app/utils/app_http.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -23,19 +22,18 @@ class DBService extends GetxService {
     return this;
   }
 
-  migrateRemoteData() async {
-    var dio = AppHttp.withAuth().instance;
-    try {
-      var response = await dio.get('https://api.ms4.io/employee?_page=1');
-      if (response.statusCode == 200) {
-        List<dynamic> responseList = response.data;
-        print(responseList);
-      }
-    } catch (error) {
-      error.printError();
-    }
-    //return null;
-  }
+  // migrateRemoteData() async {
+  //   var dio = AppHttp.withAuth().instance;
+  //   try {
+  //     var response = await dio.get('https://api.ms4.io/employee?_page=1');
+  //     if (response.statusCode == 200) {
+  //       List<dynamic> responseList = response.data;
+  //       print(responseList);
+  //     }
+  //   } catch (error) {
+  //     error.printError();
+  //   }
+  // }
 
   Future<Database> _getDatabase() async {
     // Recupera pasta da aplicacao
@@ -44,7 +42,7 @@ class DBService extends GetxService {
     String path = join(databasesPath, 'spacex9002.db');
     // descomente o await abaixo para excluir a base de dados do caminho
     // recuperado pelo path na inicializacao
-    // await deleteDatabase(path);
+    await deleteDatabase(path);
     // Retorna o banco de dados aberto
     return db = await openDatabase(
       join(databasesPath, 'spacex9002.db'),
@@ -86,7 +84,7 @@ class DBService extends GetxService {
           employee.phone
         ]);
 
-    print(id);
+    // print(id);
     return employee.copy(id: id);
   }
 
@@ -120,7 +118,7 @@ class DBService extends GetxService {
     final id =
         await db.rawDelete('DELETE FROM employee WHERE id = ?', [employeeId]);
 
-    print(id);
+    // print(id);
     return id;
   }
 

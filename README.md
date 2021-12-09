@@ -1,6 +1,6 @@
-# GetX SQLite Tutorial
+# GetX SQFLite CRUD and Dio http request
 
-Código-fonte do vídeo "Lista de notas com SQLite e GetX - Tutorial 6" do canal AnthonyDev no YouTube.
+Código-fonte baseado no vídeo "Lista de notas com SQLite e GetX - Tutorial 6" do canal AnthonyDev no YouTube.
 
 Link do vídeo: https://youtu.be/2IWGNEcvTVw
 

@@ -13,19 +13,19 @@ class EmployeeProvider {
 
   Future<Employee> save(Employee record) async {
     //descomente a linha abaixo para simular um tempo maior de resposta
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 1));
     return await dbService.save(record);
   }
 
   Future<Employee> update(Employee record) async {
     //descomente a linha abaixo para simular um tempo maior de resposta
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 1));
     return await dbService.update(record);
   }
 
-  Future<int> delete(int recId) async {
+  Future<int> delete(int recordId) async {
     //descomente a linha abaixo para simular um tempo maior de resposta
-    await Future.delayed(Duration(seconds: 2));
-    return await dbService.delete(recId);
+    await Future.delayed(Duration(seconds: 1));
+    return await dbService.delete(recordId);
   }
 }

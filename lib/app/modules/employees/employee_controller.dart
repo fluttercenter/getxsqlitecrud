@@ -159,23 +159,25 @@ class EmployeeController extends GetxController {
     loading(true);
 
     try {
+      final all = await repository.findAll();
+      recordList.addAll(all);
+      loading(false);
+    } catch (error) {
+      loading(false);
+      error.printError();
+    }
+  }
+
+  void getRemoteEmployees1() async {
+    loading(true);
+
+    try {
       // List<dynamic> remoteList = repository.getRemoteEmployees();
 
       final all = await repository.findAllAndSave();
-      // .then(print("............................OKOKOKOK")
-      //     //   // print(data);
-      //     //   // recordList.addAll();
-      //     //   // update();
-      //     )
-      // .catchError((e) => throw e);
-      print(all);
-      //recordList.value = data;
-
-      // remoteList.forEach((employee) {
-      //   print(employee);
-      // });
-
-      // print(data.toString());
+      // print(all);
+      // recordList.addAll(all);
+      loading(false);
     } catch (error) {
       loading(false);
       error.printError();

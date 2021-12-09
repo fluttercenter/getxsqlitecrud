@@ -24,19 +24,21 @@ class EmployeeListPage extends GetView<EmployeeController> {
               padding: EdgeInsets.only(right: 20.0),
               child: GestureDetector(
                 onTap: () {
-                  controller.getRemoteEmployees();
+                  controller.getRemoteEmployees1();
                 },
                 child: Icon(
-                  Icons.download_for_offline,
+                  Icons.add_circle,
                   size: 26.0,
                 ),
               )),
-          // Padding(
-          //     padding: EdgeInsets.only(right: 20.0),
-          //     child: GestureDetector(
-          //       onTap: () {},
-          //       child: Icon(Icons.more_vert),
-          //     )),
+          Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () {
+                  controller.getRemoteEmployees();
+                },
+                child: Icon(Icons.download_for_offline),
+              )),
         ],
       ),
       body: Obx(() {

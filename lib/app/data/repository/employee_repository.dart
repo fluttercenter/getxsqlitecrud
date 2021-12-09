@@ -28,8 +28,8 @@ class EmployeeRepository {
     var dio = AppHttp.withAuth().instance;
     try {
       Response<dynamic> response =
-          await dio.get('https://api.ms4.io/employee?_page=1');
-      print(response.data);
+          await dio.get('https://api.ms4.io/employee?_page=2');
+      // print(response.data);
       if (response.statusCode == 200) {
         response.data.forEach((c) {
           var employee = Employee.fromMap(c);

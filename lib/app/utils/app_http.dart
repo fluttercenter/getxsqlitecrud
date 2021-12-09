@@ -29,7 +29,7 @@ class AppHttp {
 
   _onRespose(Response response, handler) {
     // print('>>>>>>>> http response ');
-    print(response.data);
+    // print(response.data);
     print('>>>>>>>> http response ok ');
     return handler.next(response);
   }
